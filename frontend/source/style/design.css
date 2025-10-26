@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* === RESET & BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+body {
+    background-color: #00265b;
+    color: white;
+    line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: transparent;
+    transition: background-color 0.4s ease;
+}
+header.scrolled {
+    background-color: rgba(1, 103, 140, 0.95);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Logo + texte */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-container .logo {
+    height: 60px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    border-radius: 10px;
+}
+.logo-container .logo-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.menu li a {
+    color: white;
+    font-weight: 500;
+    position: relative;
+}
+.menu li a::after {
+    content: none !important; /* supprime totalement la ligne hover */
+}
+.menu li a:hover::after {
+    width: 0;
+}
+
+/* === HERO SECTION === */
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: url("../image/background-nurse.png") center/cover no-repeat;
+    color: white;
+    padding: 0 20px;
+}
+#hero::after {
+    display: none;
+}
+#hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; }
+#hero h2 { font-size: 1.5rem; margin-bottom: 10px; }
+#hero h3 { font-size: 1.2rem; margin-bottom: 30px; font-weight: 400; }
+.hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+
+/* === BOUTONS UNIFORMES === */
+.btn-num,
+.btn-map {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #01678c; /* fond uniforme */
+    color: white;              /* texte blanc */
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+.btn-num:hover,
+.btn-map:hover {
+    background-color: #028ab8;
+    color: white;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* === ABOUT SECTION === */
+#about {
+    padding: 80px 10%;
+    background-color: #00265b;
+}
+.title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #89cbe8;
+}
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.about-container .content {
+    flex: 1 1 55%;
+}
+.about-container p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+.about-container ul {
+    list-style: disc;
+    margin-left: 25px;
+}
+.about-img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* === CONTACT SECTION === */
+/* === CONTACT SECTION OPTIMISÉE === */
+#contact {
+    padding: 40px 10%;   /* réduit la hauteur verticale */
+    background-color: #89cbe8;
+    color: #00265b;
+    text-align: center;
+}
+
+#contact .section-header p {
+    margin-bottom: 10px;   /* moins d’espace entre paragraphes */
+    font-size: 1rem;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;   /* réduit un peu l’espace au-dessus des boutons */
+}
+
+/* Titre Contact plus compact */
+#contact .title {
+    font-size: 2rem;      /* un peu plus petit que avant */
+    margin-bottom: 20px;  /* moins d’espace au-dessus du contenu */
+    color: #00265b;
+}
+
+.section-header p {
+    margin-bottom: 20px;
+}
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* === FOOTER === */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* === REVEAL ANIMATION === */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+    .about-container { flex-direction: column; text-align: center; }
+    .about-img { margin-top: 20px; }
+    .menu { gap: 15px; }
+    header { padding: 10px 20px; }
+}
+@media (max-width: 600px) {
+    #hero h1 { font-size: 2rem; }
+    #hero h2 { font-size: 1.2rem; }
+    .btn-num, .btn-map { font-size: 0.9rem; padding: 10px 18px; }
+    .logo { height: 50px; }
+    .title { font-size: 1.8rem; }
+}
+
+/* === LIENS SANS SOULIGNEMENT POUR TOUT LE SITE === */
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none !important;
+    color: inherit;
+    outline: none;
+}
+
+/* === HAMBURGER MENU === */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Menu déroulant mobile */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: rgba(1,103,140,0.95);
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .menu.active {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
