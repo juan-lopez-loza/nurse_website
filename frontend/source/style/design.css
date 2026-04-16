@@ -103,8 +103,8 @@ header.scrolled {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background-color: #01678c; /* fond uniforme */
-    color: white;              /* texte blanc */
+    background-color: #01678c;
+    color: white;
     padding: 12px 24px;
     font-size: 1rem;
     border-radius: 30px;
@@ -239,7 +239,6 @@ a:hover,
 a:active,
 a:focus {
     text-decoration: none !important;
-    color: inherit;
     outline: none;
 }
 
