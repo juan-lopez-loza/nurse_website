@@ -92,9 +92,9 @@ header.scrolled {
 #hero::after {
     display: none;
 }
-#hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; }
-#hero h2 { font-size: 1.5rem; margin-bottom: 10px; }
-#hero h3 { font-size: 1.2rem; margin-bottom: 30px; font-weight: 400; }
+#hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; text-shadow: 1px 1px 1px #000;}
+#hero h2 { font-size: 1.5rem; margin-bottom: 10px; text-shadow: 1px 1px 1px #000; }
+#hero h3 { font-size: 1.2rem; margin-bottom: 30px; font-weight: 400; text-shadow: 1px 1px 1px #000;}
 .hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
 
 /* === BOUTONS UNIFORMES === */
